@@ -7,6 +7,7 @@ from bsonrpc import request, service_class
 from bsonrpc.exceptions import FramingError
 from bsonrpc.framing import (
 	JSONFramingNetstring, JSONFramingNone, JSONFramingRFC7464)
+import node
 
 
 # Class providing functions for the client to use:
