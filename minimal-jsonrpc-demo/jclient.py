@@ -33,8 +33,9 @@ print("graph after increment")
 root.show()
 
 GraphRoot = CreateDict(root)
-#print(GraphRoot)
-dictSend = json.dumps(GraphRoot)
+
+#print("HERE ", GraphRoot.keys())
+dictSend = json.dumps(GraphRoot)	  			#makes the dictionary into a a json string to send
 print(server.nop(dictSend))
 
 # Execute in server:

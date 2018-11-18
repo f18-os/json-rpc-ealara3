@@ -1,4 +1,4 @@
-# minimalistic server example from 
+# minimalistic server example from
 # https://github.com/seprich/py-bson-rpc/blob/master/README.md#quickstart
 
 import socket
@@ -7,7 +7,8 @@ from bsonrpc import request, service_class
 from bsonrpc.exceptions import FramingError
 from bsonrpc.framing import (
 	JSONFramingNetstring, JSONFramingNone, JSONFramingRFC7464)
-import node
+import json
+import localDemo, node
 
 
 # Class providing functions for the client to use:
@@ -21,7 +22,12 @@ class ServerServices(object):
   @request
   def nop(self, txt):
     print(txt)
+    root =localDemo.CreateTree(txt)
+    print("FE",root)
+    localDemo.show(root)
+
     return txt
+
 
 # Quick-and-dirty TCP Server:
 ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
